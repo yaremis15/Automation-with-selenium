@@ -21,9 +21,9 @@ public class Producto {
 
     //Crear una variable estatica (Static) de la clse producto
 
-     public static int CONTADOR_PRODUCTO = 100;
-     public   static int CONT_LOT = 200;
-     public  static  int CONT_COD = 300;
+     public static int CONTADOR_PRODUCTO = 0;
+     public   static int CONT_LOT = 0;
+     public  static  int CONT_COD = 0;
 
     //Creación de contructores con parametros
     public Producto (String unNombre, int unCodigo, boolean importado, String lote, int nroProd){
