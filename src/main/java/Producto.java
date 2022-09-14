@@ -4,33 +4,38 @@ public class Producto {
                 private int codigo;
                 private  boolean esImportado;
                 private int nroProducto;
-                private String nroLote;
+                private int nroLote;
 
 //Creación de contructores sin parametros
 
     public Producto(){
-        this.nombre = "desconocido";
-        this.codigo = 0;
         this.esImportado = false;
-        this.nroLote = "desconocido";
         CONTADOR_PRODUCTO = CONTADOR_PRODUCTO + 1;
         this.nroProducto = CONTADOR_PRODUCTO;
+        CONT_LOT = CONT_LOT + 1;
+        this.nroLote = CONT_LOT;
+        CONT_COD = CONT_COD + 1;
+        this.codigo = CONT_COD;
+
     }
 
     //Crear una variable estatica (Static) de la clse producto
 
-     private static int CONTADOR_PRODUCTO = 0;
-
+     public static int CONTADOR_PRODUCTO = 100;
+     public   static int CONT_LOT = 200;
+     public  static  int CONT_COD = 300;
 
     //Creación de contructores con parametros
-
     public Producto (String unNombre, int unCodigo, boolean importado, String lote, int nroProd){
         this.nombre = unNombre;
         this.codigo = unCodigo;
         this.esImportado = importado;
-        this.nroLote = lote;
         CONTADOR_PRODUCTO = CONTADOR_PRODUCTO + 1;
         this.nroProducto = CONTADOR_PRODUCTO;
+        CONT_LOT = CONT_LOT + 1;
+        this.nroLote= CONT_LOT;
+        CONT_COD = CONT_COD + 1;
+        this.codigo = CONT_COD;
     }
     //Setters y getters
     public void setNombre(String unNombre){
@@ -59,10 +64,10 @@ public class Producto {
     public int getNroProducto (int nroProd){
         return this.nroProducto;
     }
-    public void setNroLote (String lote){
+    public void setNroLote (int lote){
         this.nroLote = lote;
     }
-    public String getNroLote( String lote){
+    public int getNroLote(int lote){
         return this.nroLote;
     }
 
@@ -74,7 +79,7 @@ public class Producto {
         } else {
             textoAImprimir += " Es nacional ";
         }
-        textoAImprimir += " El número de lote es: " + this.nroLote + " El número de producto es: " + this.nroProducto;
+        textoAImprimir += " El número de lote es: " + this.nroLote + " Y el número de producto es: " + this.nroProducto;
 
         return textoAImprimir;
     }
