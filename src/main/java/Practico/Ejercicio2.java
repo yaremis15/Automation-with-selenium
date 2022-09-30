@@ -13,7 +13,7 @@ public class Ejercicio2 {
         if (esMayor(numero)) {
             System.out.println("El número ingresado es mayor a 20 ");
         } else {
-            System.out.println("El número ongresado es menor a 20 ");
+            System.out.println("El número ingresado es menor a 20 ");
 
         }
         System.out.println("Fin del Programa!!");

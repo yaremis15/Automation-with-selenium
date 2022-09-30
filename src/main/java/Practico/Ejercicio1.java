@@ -4,8 +4,8 @@ package Practico;
 import java.util.Scanner;
 
 public class Ejercicio1 {
-    public static void main(String args[]) {
-        Scanner input = new Scanner(System.in);
+    public static  void main(String args[]) {
+       Scanner input = new Scanner(System.in);
         System.out.println("Ingrese Número!!");
         int num = input.nextInt();
         int duplicar = calcularDoble (num);
