@@ -1,0 +1,37 @@
+group 'org.example.selenium.cucumber'
+version '1.0-SNAPSHOT'
+
+defaultTasks 'clean', 'test', 'aggregate'
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.3.0'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.11.0'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.2.1'
+    implementation group: 'tech.grasshopper', name: 'extentreports-cucumber6-adapter', version: '2.13.0'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '6.11.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+}
+
+test {
+    systemProperty "file.encoding", "utf-8"
+    testLogging.showStandardStreams = true
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+}
